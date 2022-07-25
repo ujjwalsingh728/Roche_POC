@@ -1,0 +1,91 @@
+  .container{
+      padding-top: 3em;
+      overflow-y: scroll;
+      height: 80%;
+  }
+  .delete{
+      color: #BD1B40;
+      cursor: pointer;
+  }
+  .cdk-drag-preview .delete  {
+   visibility: hidden;
+  }
+  .icon-display {
+    transform: scale(2);
+ }
+ .compare{
+     color: white;
+     background-color: #095cf2;
+ }
+ .clear{
+   margin-right: 20px;
+   color: #095cf2;
+   box-shadow: none;
+ }
+ .clear:disabled{
+   background-color: white;
+ }
+ .example-list {
+    min-height: 100%;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    display: block;
+  }
+  .left-box {
+    padding: 10px 10px;
+    border: solid 1px rgb(90, 88, 88);
+    border-radius: 10px;
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+    color: gray;
+    display: flex;
+    margin: 5px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: white;
+    font-size: 14px;
+  }
+  .right-box {
+    padding: 10px 10px;
+    border: solid 1px #045c04;
+    border-radius: 10px;
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+    color: #008000;
+    display: flex;
+    margin: 5px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: white;
+    font-size: 14px;
+  }
+  
+  .cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: solid 1px #008000;
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+    color: #008000;
+  }
+  
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+  
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  
+  /* .left-box:last-child {
+    border: none;
+  } */
+  
+  .example-list.cdk-drop-list-dragging .left-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  

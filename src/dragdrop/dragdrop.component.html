@@ -1,0 +1,51 @@
+<mat-icon mat-dialog-close style="float: right;">close</mat-icon>
+<div class="dialogheader">
+    <h1>Studies selected for comparison</h1>
+</div>
+<div class="row container">
+<div class="col-md-5">
+  <h3>Selected studies</h3>
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[doneList]"
+      (cdkDropListDropped)="drop($event)"
+      class="example-list">
+        <div class="left-box" *ngFor="let item of todo" cdkDrag>
+           {{item}} <mat-icon class="delete">delete_sweep </mat-icon></div>
+    </div>
+  </div>
+  <div class="col-md-2" style="margin-top: 3rem; color: darkgray;">
+    <div style="padding: 10px;opacity: 0.5;">
+       Drag from the left
+     </div>
+   <div style="padding: 20px;">
+    <mat-icon class="icon-display" >keyboard_double_arrow_right</mat-icon>
+   </div>
+   <div style="padding: 10px;opacity: 0.5;">
+     Drop in the right
+  </div>
+  </div>
+  <div class="col-md-5">
+    <h3>Studies to compare (upto 4)</h3>
+  
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[todoList]"
+      (cdkDropListDropped)="drop($event)"
+      [cdkDropListEnterPredicate]="canDrop"
+      class="example-list">
+      <div class="right-box" *ngFor="let item of done; let i = index;"  cdkDrag>
+          {{item}}
+      </div>
+    </div>
+  </div>
+
+</div>
+<div style="padding-top: 20px; float: right;">
+    <button mat-raised-button class="clear"[disabled]="done.length<2" [disableRipple]="true" (click)="removeAllElement()">Clear comparison selections</button>
+    <button mat-raised-button class="compare"[disabled]="done.length<2">Compare</button>
+</div>
